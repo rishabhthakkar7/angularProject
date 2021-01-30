@@ -1,0 +1,31 @@
+<div class="container">
+    <button class="btn btn-primary mt-2" routerLink="./add" >Add Product</button>
+    <div class="row mt-2">
+        <div class="col-md-8">
+        <table class="table table-hover">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Cost</th>
+                <th scope="col">Created</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let product of products;let i=index" >
+              <tr>
+                <td scope="col">{{ product.name }}</td>
+                <td scope="col">{{ product.price }}</td>
+                <td scope="col">{{ product.cost }}</td>
+                <td scope="col">{{ product.created | date:'d/M/yy h:m' }} </td>
+                <td scope="col">
+                  <button class="btn btn-primary" routerLink="/products/{{i}}" (click)="productView(i)">View</button>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+        </div>
+        <div class="col-md-4">
+            <router-outlet></router-outlet>
+        </div>
+</div>

@@ -1,0 +1,64 @@
+<form  [formGroup]="productForm" (ngSubmit)="SubmitProduct()">
+    <legend>Product</legend>
+    <div class="form-group">
+        <label>Name</label>
+        <input formControlName="name" class="form-control"  >
+        <div *ngIf="productForm.get('name').invalid && (productForm.get('name').touched)">
+            <span class="help-block" *ngIf="productForm.get('name').errors['required']" >Name is required</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Price</label>
+        <input type="number" formControlName="price" class="form-control"  >
+        <div *ngIf="productForm.get('price').invalid && (productForm.get('price').touched)">
+            <span class="help-block" *ngIf="productForm.get('price').errors['required']" >Price is required</span>
+            <span class="help-block" *ngIf="productForm.get('price').errors['pattern']" >Please enter Numeric value as price.</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label>Cost</label>
+        <input type="number" formControlName="cost" class="form-control">
+        <div *ngIf="productForm.get('cost').invalid && (productForm.get('cost').touched)">
+            <span class="help-block" *ngIf="productForm.get('cost').errors['required']" >Cost is required</span>
+            <span class="help-block" *ngIf="productForm.get('cost').errors['pattern']" >Please enter Numeric value as cost.</span>
+        </div>
+    </div>
+    <h4>Raw Materials:</h4>
+    <button type="button" class="btn btn-primary" (click)="onAddraw()">Add Material</button>
+    <div class="form-group ">
+        <div formArrayName="raw">
+            <div class="row" *ngIf="rawControls.length > 0" >
+                <div class="col-md-6">
+                    Name
+                </div>
+                <div class="col-md-4">
+                    Unit
+                </div>
+            </div>
+            <div class="row mt-2" *ngFor="let rawCtrl of rawControls; let i=index" [formGroupName]="i" >
+                <div class="col-md-6" >
+                    <input type="text" placeholder="name" class="form-control" formControlName="name">
+                    <div *ngIf="rawCtrl.get('name').invalid && rawCtrl.get('name').touched">
+                        <span class="help-block" *ngIf="rawCtrl.get('name').errors['required']">
+                            Please enter name
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <input type="number" placeholder="unit" class="form-control" formControlName="unit">
+                    <div *ngIf="rawCtrl.get('unit').invalid && rawCtrl.get('unit').touched">
+                        <span class="help-block" *ngIf="rawCtrl.get('unit').errors['required']">
+                            Please enter unit
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-1">
+                    <button class="btn btn-danger" (click)="onRemove(i)" >X</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <button  type="submit" [disabled]="productForm.invalid" >Save</button>
+    </div>
+</form>

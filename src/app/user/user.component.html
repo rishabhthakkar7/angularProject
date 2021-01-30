@@ -1,0 +1,46 @@
+<div class="container">
+<div class="row">
+<div class="col-md-8">
+<table class="table table-hover">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let userdetail of user;let i = index">
+      <!-- table-active -->
+        <tr class="" (click)="SelectUser(i)" style="cursor: pointer;" *ngIf="userdetail">
+          <th>{{ userdetail.FullName }}</th>
+          <td>{{ userdetail.email }}</td>
+          <td>{{ userdetail.gender }}</td>
+          <td>
+            <button [routerLink]="['/users',i]" class="btn btn-primary">Edit</button>&nbsp;
+            <button (click)="deleteUser(i)" class="btn btn-primary">Delete</button>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>
+<div class="col-md-4" *ngIf="userdetailId >-1 ">
+  <div class="card mb-3">
+    <h3 class="card-header">User Detail</h3>
+    <div class="card-body">
+      <h5 class="card-title">{{ DetailUser.FullName }}</h5>
+      <h6 class="card-subtitle text-muted">{{ DetailUser.gender }}</h6>
+    </div>
+    <div class="card-body">
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">email:{{ DetailUser.email }}</li>
+      <li class="list-group-item">password:{{ DetailUser.password }}</li>
+    </ul>
+    <div class="card-body">
+      <button (click)="userdetailId=-1" class="card-link">Cancel</button>
+    </div>
+   </div>
+</div>
+</div>

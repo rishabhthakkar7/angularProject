@@ -1,0 +1,35 @@
+[debug] [2021-01-30T16:50:20.065Z] ----------------------------------------------------------------------
+[debug] [2021-01-30T16:50:20.075Z] Command:       C:\NODE\node.exe C:\Users\User\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js init
+[debug] [2021-01-30T16:50:20.076Z] CLI Version:   9.2.2
+[debug] [2021-01-30T16:50:20.076Z] Platform:      win32
+[debug] [2021-01-30T16:50:20.077Z] Node Version:  v12.18.3
+[debug] [2021-01-30T16:50:20.081Z] Time:          Sat Jan 30 2021 22:20:20 GMT+0530 (India Standard Time)
+[debug] [2021-01-30T16:50:20.082Z] ----------------------------------------------------------------------
+[debug] [2021-01-30T16:50:20.083Z] 
+[debug] [2021-01-30T16:50:20.108Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2021-01-30T16:50:20.110Z] > authorizing via signed-in user
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  C:\Angular\project
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
+[info] 
+=== Project Setup
+[info] 
+[info] First, let's associate this project directory with a Firebase project.
+[info] You can create multiple project aliases by running firebase use --add, 
+[info] but for now we'll just set up a default project.
+[info] 
+[debug] [2021-01-30T16:50:39.316Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects pageSize=100
+[debug] [2021-01-30T16:50:40.071Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects 200
+[debug] [2021-01-30T16:50:40.072Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects [omitted]

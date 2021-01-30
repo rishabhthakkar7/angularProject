@@ -1,0 +1,21 @@
+<div class="container col-md-8">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" >
+        <legend>Login</legend>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" class="form-control col-md-6" name="email" ngModel #email="ngModel" required email>
+        </div>
+        <div class="alert-danger col-md-6" [hidden]="(email.valid || (email.untouched && !f.submitted) )">
+            <p *ngIf="email.errors?.required">Please Enter email</p>
+            <p *ngIf="email.errors?.email">Please Enter valid email</p>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="text" class="form-control col-md-6" name="password" ngModel #password="ngModel" required>
+        </div>
+        <div class="alert-danger col-md-6" [hidden]="(password.valid || (password.untouched && !f.submitted) )">Please Enter Password</div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary" [disabled]="!f.valid" >Submit</button>
+        </div>    
+    </form>     
+</div>

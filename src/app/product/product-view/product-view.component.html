@@ -1,0 +1,25 @@
+<div *ngIf="productDetail">
+    <h3>Product deatil</h3>
+    <h6>Name: {{ productDetail.name }}</h6>
+    <h6>Price: {{ productDetail.price }}</h6>
+    <h6>Cost: {{ productDetail.cost }}</h6>
+    
+    <!-- <div *ngIf="productDetail.raw"> -->
+        <h4>Raw Material</h4>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Unit</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let raw of productDetail.raw;let i = index">
+                        <td>{{ raw.name }} </td>
+                        <td>{{ raw.unit }} </td>
+                    </tr>
+                </tbody>
+            </table>
+    <!-- </div> -->
+    
+</div>
